@@ -1,0 +1,29 @@
+:root {
+	--warm-yellow: #f9dfb7;
+	--matte-green: #097969;
+	--light-green: #afe1af;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+	background-color: var(--warm-yellow);
+}
+
+input,
+button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+textarea {
+	outline: none;
+	resize: none;
+}
+
+a {
+	text-decoration: none;
+}

@@ -6,7 +6,6 @@
 	let message = "Enter required fields below to start";
 
 	$: depositPercent = (deposit / housePrice) * 100;
-	$: stampDuty = housePrice * 0.03;
 	$: yieldCalc = (annualRentalIncome / housePrice) * 100;
 	$: requiredMortgage = housePrice - deposit;
 	$: annualRentalIncome = monthlyRentalIncome * 12;
@@ -27,11 +26,6 @@
 			<div class="notes">
 				<p>Notes:</p>
 				<ul>
-					<li>
-						If taking out mortgage, generally, deposit should be at
-						least 25% of property price, loan-to-value should be 75%
-						(subject to individual lender's requirements).
-					</li>
 					<li>
 						Upon sale, the investment property could incur a capital
 						gains tax.
@@ -71,9 +65,18 @@
 								placeholder="20,000"
 							/>
 						</div>
-						<p class="note">
-							{depositPercent || ""} <span>%</span>
-						</p>
+						{#if depositPercent < 25}
+							<p class="note">
+								{depositPercent || ""}<span>%, </span>
+							</p>
+							<p class="note warning">
+								Generally, the deposit should be at least 25%
+							</p>
+						{:else}
+							<p class="note">
+								{depositPercent || ""} <span>%</span>
+							</p>
+						{/if}
 					</div>
 					<div class="section">
 						<div class="section-top">
@@ -81,13 +84,56 @@
 						</div>
 						<div class="section-bottom">
 							<p>£</p>
-							<input
-								type="number"
-								id="stamp-duty"
-								bind:value={stampDuty}
-								placeholder="We will calculate this"
-								readonly
-							/>
+							{#if !housePrice}
+								<input
+									type="number"
+									id="stamp-duty"
+									value=""
+									placeholder="We will calculate this"
+									readonly
+								/>
+							{:else if housePrice <= 40000}
+								<input
+									type="number"
+									id="stamp-duty"
+									value="0"
+									readonly
+								/>
+							{:else if housePrice > 40000 && housePrice <= 250000}
+								<input
+									type="number"
+									id="stamp-duty"
+									value={housePrice * 0.03}
+									readonly
+								/>
+							{:else if housePrice > 250000 && housePrice <= 925000}
+								<input
+									type="number"
+									id="stamp-duty"
+									value={250000 * 0.03 +
+										(housePrice - 250000) * 0.08}
+									readonly
+								/>
+							{:else if housePrice > 925000 && housePrice <= 1500000}
+								<input
+									type="number"
+									id="stamp-duty"
+									value={250000 * 0.03 +
+										(925000 - 250000) * 0.08 +
+										(housePrice - 925000) * 0.13}
+									readonly
+								/>
+							{:else if housePrice > 1500000}
+								<input
+									type="number"
+									id="stamp-duty"
+									value={250000 * 0.03 +
+										(925000 - 250000) * 0.08 +
+										(1500000 - 925000) * 0.13 +
+										(housePrice - 1500000) * 0.15}
+									readonly
+								/>
+							{/if}
 						</div>
 					</div>
 					<div class="section">
@@ -107,6 +153,36 @@
 				</div>
 				<div class="calc calc-output">
 					<div class="row">
+						<div class="col left note">Stamp Duty Notes:</div>
+						<div class="col right note">
+							{#if !housePrice}
+								<p>Remember, stamp duty is tiered</p>
+							{:else if housePrice <= 40000}
+								<p>
+									No stamp duty required for properties below
+									£40,000
+								</p>
+							{:else if housePrice > 40000 && housePrice <= 250000}
+								<p>
+									For properties between £40,001 and £250,000,
+									3% on full property price
+								</p>
+							{:else if housePrice > 250000 && housePrice <= 925000}
+								<p>
+									For properties between £250,001 and
+									£925,000, 8% tiered
+								</p>
+							{:else if housePrice > 925000 && housePrice <= 1500000}
+								<p>
+									For properties between £925,001 and £1.5m,
+									13% tiered
+								</p>
+							{:else if housePrice > 1500000}
+								<p>For properties above £1.5m, 15% tiered</p>
+							{/if}
+						</div>
+					</div>
+					<div class="row">
 						<div class="col left">Yield:</div>
 						<div class="col right">
 							<span id="yield">{yieldCalc || ""}</span>%
@@ -115,21 +191,29 @@
 					<div class="row">
 						<div class="col left">Mortgage Required:</div>
 						<div class="col right">
-							<span id="mortgage">£{requiredMortgage || ""}</span>
+							{#if !requiredMortgage}
+								<p>£</p>
+							{:else}
+								<p>{requiredMortgage.toLocaleString("en")}</p>
+							{/if}
 						</div>
 					</div>
 					<div class="row">
 						<div class="col left">Loan-to-Value:</div>
 						<div class="col right">
-							<span id="ltv">{ltv || ""}</span>%
+							<span id="yield">{ltv || ""}</span>%
 						</div>
 					</div>
 					<div class="row">
 						<div class="col left">Annual Rental Income:</div>
 						<div class="col right">
-							<span id="annual-rental-income"
-								>£{annualRentalIncome || ""}</span
-							>
+							{#if !annualRentalIncome}
+								<p>£</p>
+							{:else}
+								<p>
+									£{annualRentalIncome.toLocaleString("en")}
+								</p>
+							{/if}
 						</div>
 					</div>
 				</div>
@@ -170,6 +254,18 @@
 		text-align: justify;
 	}
 
+	.notes p {
+		line-height: 125%;
+	}
+
+	.notes ul {
+		padding: 0.25rem 0;
+	}
+
+	.notes li {
+		padding: 0.25rem 0;
+	}
+
 	.message {
 		margin: 0.5rem auto;
 		background-color: var(--light-green);
@@ -190,6 +286,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: flex-start;
 	}
 
 	.section-bottom {
@@ -208,10 +305,12 @@
 	}
 
 	input {
+		flex: 1 1 0%;
 		border: 1px solid gray;
 		border-radius: 5px;
 		margin: 0.5rem auto;
-		padding: 0.2rem 0.3rem;
+		padding: 0.5rem 0.75rem;
+		font-size: 1rem;
 	}
 
 	.row {
@@ -241,13 +340,17 @@
 		font-size: 0.8rem;
 	}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: 800px;
-		}
+	.warning {
+		color: red;
+	}
 
+	@media (min-width: 640px) {
 		h1 {
 			font-size: 4rem;
+		}
+
+		.notes {
+			margin: 0 2rem;
 		}
 
 		.calc {
@@ -312,10 +415,6 @@
 
 		.message {
 			max-width: fit-content;
-		}
-
-		input {
-			padding: 0.5rem 0.75rem;
 		}
 	}
 </style>

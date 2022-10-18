@@ -3,7 +3,6 @@
 	let housePrice;
 	let deposit;
 	let monthlyRentalIncome;
-	let message = "Enter required fields below to start";
 
 	$: depositPercent = (deposit / housePrice) * 100;
 	$: yieldCalc = (annualRentalIncome / housePrice) * 100;
@@ -36,7 +35,16 @@
 
 		<div class="framework-right">
 			<div class="container general">
-				<p class="message">{message}</p>
+				{#if depositPercent < 25}
+					<p class="warning">
+						Generally, deposit should be at least 25% of property
+						price
+					</p>
+				{:else}
+					<p class="message">
+						Enter required fields below to continue
+					</p>
+				{/if}
 				<div class="calc calc-input">
 					<div class="section">
 						<div class="section-top">
@@ -65,18 +73,9 @@
 								placeholder="20,000"
 							/>
 						</div>
-						{#if depositPercent < 25}
-							<p class="note">
-								{depositPercent || ""}<span>%, </span>
-							</p>
-							<p class="note warning">
-								Generally, the deposit should be at least 25%
-							</p>
-						{:else}
-							<p class="note">
-								{depositPercent || ""} <span>%</span>
-							</p>
-						{/if}
+						<p class="note">
+							{depositPercent || ""} <span>%</span>
+						</p>
 					</div>
 					<div class="section">
 						<div class="section-top">
@@ -275,6 +274,15 @@
 		max-width: fit-content;
 	}
 
+	.warning {
+		margin: 0.5rem auto;
+		background-color: var(--light-orange);
+		color: var(--matte-orange);
+		border-radius: 5px;
+		padding: 0.5rem 1rem;
+		max-width: fit-content;
+	}
+
 	.container {
 		display: flex;
 		flex-direction: column;
@@ -338,10 +346,6 @@
 
 	.note {
 		font-size: 0.8rem;
-	}
-
-	.warning {
-		color: red;
 	}
 
 	@media (min-width: 640px) {

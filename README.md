@@ -1,8 +1,9 @@
 # Property Investment Calculator (UK)
-Live here: https://kcxgu.github.io/property-investment-calculator/
 
 ### A Svelte Project 
 Initiated when I was learning the foundations of software engineering, applying relevant concepts to fully functioning, responsive web development projects whilst learning Svelte in parallel.
+
+Live here: https://kcxgu.github.io/property-investment-calculator/
 
 ## Overview
 This calculator takes the need-for-calculation away from the user and paints a picture of what the investment will look like. 

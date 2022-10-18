@@ -41,17 +41,17 @@ As it's a small, self-contained project, I took the waterfall project management
 **Stage 1** 
 1. Create a UX/UI design of what it should look like, identifying a colour palette and any images to be used. **[Time taken: 1 hour]**.
 2. Take a mobile-first approach and start building the general calculator section first (i.e. everything up to the calculation of the yield, mortgage required, LTV ratio and the annual rental income), catering for a mobile. **[Time taken: 3.5 hours, mostly to understand the Svelte reactive "$:" syntax]**.
-3. Add CSS elements, catering for different sized devices. **[Time taken: 1 hour]**
+3. Add CSS elements, catering for different sized devices. **[Time taken: 1 hour]**.
 
 **Stage 2**
-1. Continue to work on the general section by adding in the tiered stamp duty system.
-2. Update to include a message if the deposit is less than 25% of the house price.
-3. Add thousands separator. 
-4. Any other UX/UI updates.
+1. Continue to work on the general section by adding in the tiered stamp duty system. **[Time taken: 45 minutes]**.
+2. Update to include a message if the deposit is less than 25% of the house price. **[Time taken: 25 minutes]**.
+3. Add thousands separator, where possible. **[Time taken: 10 minutes]**. 
+4. Any other UX/UI updates. **[Time taken: 10 minutes]**.
 
 **Stage 3**
-1. Continuing in mobile-first approach, add the more specific sections (i.e. everything up to calculating the estimated annual profit and how many years it would take to break-even).
-2. Add CSS elements, catering for different sized devices.
+1. Continuing in mobile-first approach, add the more specific sections (i.e. everything up to calculating the estimated annual profit and how many years it would take to break-even). **[Time taken: 30 minutes]**.
+2. Add CSS elements, catering for different sized devices. **[Time taken: 5 minutes]**.
 
 **Stage 4**
 1. Add favicon
@@ -59,5 +59,5 @@ As it's a small, self-contained project, I took the waterfall project management
 3. Incorporate relevant feedback
 
 ## Tests
-Simple tests were carried out throughout the development to ensure the calculations are correct. 
+Simple tests were carried out throughout the development to ensure the calculations were correct. 
 

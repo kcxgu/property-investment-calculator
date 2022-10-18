@@ -3,12 +3,20 @@
 	let housePrice;
 	let deposit;
 	let monthlyRentalIncome;
+	let fees;
+	let oneOffCost;
+	let monthlyMortgage;
+	let monthlyCosts;
 
 	$: depositPercent = (deposit / housePrice) * 100;
 	$: yieldCalc = (annualRentalIncome / housePrice) * 100;
 	$: requiredMortgage = housePrice - deposit;
 	$: annualRentalIncome = monthlyRentalIncome * 12;
 	$: ltv = (requiredMortgage / housePrice) * 100;
+
+	$: monthlyProfit = monthlyRentalIncome - monthlyCosts - monthlyMortgage;
+	$: annualProfit = monthlyProfit * 12;
+	$: breakEven = Math.round((fees + oneOffCost) / annualProfit);
 </script>
 
 <main>
@@ -27,13 +35,22 @@
 				<ul>
 					<li>
 						Upon sale, the investment property could incur a capital
-						gains tax.
+						gains tax (not included in the calculations below).
+					</li>
+					<li>
+						More helpful information are available on the UK
+						government's website: <a
+							href="https://www.moneyhelper.org.uk/en/homes/buying-a-home/buy-to-let-mortgages-explained"
+							>Money Helper</a
+						>
 					</li>
 				</ul>
 			</div>
 		</div>
-
+		<!-- Beginning Input and Output -->
 		<div class="framework-right">
+			<!-- Beginning General Input and Output -->
+			<h3>General Calculations</h3>
 			<div class="container general">
 				{#if depositPercent < 25}
 					<p class="warning">
@@ -45,6 +62,7 @@
 						Enter required fields below to continue
 					</p>
 				{/if}
+				<!-- Beginning General Input-->
 				<div class="calc calc-input">
 					<div class="section">
 						<div class="section-top">
@@ -150,6 +168,7 @@
 						</div>
 					</div>
 				</div>
+				<!--Beginning General Output-->
 				<div class="calc calc-output">
 					<div class="row">
 						<div class="col left note">Stamp Duty Notes:</div>
@@ -216,7 +235,123 @@
 						</div>
 					</div>
 				</div>
+				<!-- End of General Input and Output -->
+				<!-- Beginning Additional Input and Output -->
+				<h3>Additional Calculations*</h3>
+				<p id="additional-fyi">
+					*Calculations exclude house price, deposit and stamp duty on
+					the assumption that these will be covered in the re-sale
+					revenue at the end of the investment period.
+				</p>
+				<!-- Beginning Additional Input -->
+				<div class="calc calc-input">
+					<div class="section">
+						<div class="section-top">
+							<p class="name">
+								Estimated Fees (e.g. legal fees, bank fees,
+								surveyor's fees, etc.)
+							</p>
+						</div>
+						<div class="section-bottom">
+							<p>£</p>
+							<input
+								type="number"
+								id="fees"
+								placeholder="10,000"
+								bind:value={fees}
+							/>
+						</div>
+						<div class="section">
+							<div class="section-top">
+								<p class="name">Esimated One-Off Costs</p>
+							</div>
+							<div class="section-bottom">
+								<p>£</p>
+								<input
+									type="number"
+									id="oneOffCost"
+									placeholder="1,000"
+									bind:value={oneOffCost}
+								/>
+							</div>
+						</div>
+						<div class="section">
+							<div class="section-top">
+								<p class="name">
+									Esimated Monthly Mortgage Payment
+								</p>
+							</div>
+							<div class="section-bottom">
+								<p>£</p>
+								<input
+									type="number"
+									id="monthlyMortgage"
+									placeholder="200"
+									bind:value={monthlyMortgage}
+								/>
+							</div>
+						</div>
+						<div class="section">
+							<div class="section-top">
+								<p class="name">Esimated Monthly Costs</p>
+							</div>
+							<div class="section-bottom">
+								<p>£</p>
+								<input
+									type="number"
+									id="monthlyCosts"
+									placeholder="50"
+									bind:value={monthlyCosts}
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Beginning Additional Output-->
+				<div class="calc calc-output">
+					<div class="row">
+						<div class="col left">Estimated Monthly Profit:</div>
+						<div class="col right">
+							{#if monthlyRentalIncome && monthlyMortgage && monthlyCosts}
+								<p>£{monthlyProfit.toLocaleString("en")}</p>
+							{:else}
+								<p class="output-warning">
+									Enter monthly rental income, estimated
+									monthly mortgage payment and/or estimated
+									monthly costs to continue
+								</p>
+							{/if}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col left">Estimated Annual Profit:</div>
+						<div class="col right">
+							{#if !monthlyProfit}
+								<p class="output-warning">Same as above</p>
+							{:else}
+								<p>£{annualProfit.toLocaleString("en")}</p>
+							{/if}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col left">Break-Even:</div>
+						<div class="col right">
+							{#if annualProfit && fees && oneOffCost}
+								<p>
+									Estimated at least {breakEven || 1} year(s)
+								</p>
+							{:else}
+								<p class="output-warning">
+									Enter monthly rental income and all
+									additional calculation fields to continue
+								</p>
+							{/if}
+						</div>
+					</div>
+				</div>
+				<!-- End of Additional Input andd Output-->
 			</div>
+			<!-- End of All Input and Output -->
 		</div>
 	</div>
 </main>
@@ -235,6 +370,16 @@
 		font-weight: 100;
 	}
 
+	h3 {
+		padding: 2rem 0 0.5rem 0;
+	}
+
+	#additional-fyi {
+		line-height: 130%;
+		padding: 0.5rem 0;
+		font-weight: 300;
+	}
+
 	.description {
 		padding: 1rem 0;
 	}
@@ -251,6 +396,7 @@
 		align-items: center;
 		padding-right: 2rem;
 		text-align: justify;
+		font-weight: 300;
 	}
 
 	.notes p {
@@ -266,28 +412,34 @@
 	}
 
 	.message {
-		margin: 0.5rem auto;
+		margin: 1rem auto;
 		background-color: var(--light-green);
 		color: var(--matte-green);
 		border-radius: 5px;
 		padding: 0.5rem 1rem;
 		max-width: fit-content;
+		line-height: 125%;
 	}
 
 	.warning {
-		margin: 0.5rem auto;
+		margin: 1rem auto;
 		background-color: var(--light-orange);
 		color: var(--matte-orange);
 		border-radius: 5px;
 		padding: 0.5rem 1rem;
 		max-width: fit-content;
+		line-height: 125%;
+	}
+
+	.output-warning {
+		color: var(--matte-orange);
 	}
 
 	.container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 1rem 0;
+		padding: 0.5rem 0;
 	}
 
 	.section {
@@ -374,6 +526,7 @@
 	@media (min-width: 1024px) {
 		.framework {
 			display: flex;
+			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			max-width: 800px;
@@ -415,10 +568,6 @@
 			display: flex;
 			padding: 1rem 0;
 			gap: 1.5rem;
-		}
-
-		.message {
-			max-width: fit-content;
 		}
 	}
 </style>

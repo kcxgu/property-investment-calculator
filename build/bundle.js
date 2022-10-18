@@ -332,6 +332,10 @@ var app = (function () {
         else
             dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
     }
+    function prop_dev(node, property, value) {
+        node[property] = value;
+        dispatch_dev('SvelteDOMSetProperty', { node, property, value });
+    }
     function set_data_dev(text, data) {
         data = '' + data;
         if (text.wholeText === data)
@@ -370,6 +374,634 @@ var app = (function () {
 
     const file = "src/App.svelte";
 
+    // (75:6) {:else}
+    function create_else_block_2(ctx) {
+    	let p;
+    	let t0_value = (/*depositPercent*/ ctx[7] || "") + "";
+    	let t0;
+    	let t1;
+    	let span;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			span = element("span");
+    			span.textContent = "%";
+    			add_location(span, file, 76, 31, 1888);
+    			attr_dev(p, "class", "note svelte-nsiq2q");
+    			add_location(p, file, 75, 7, 1840);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			append_dev(p, t1);
+    			append_dev(p, span);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*depositPercent*/ 128 && t0_value !== (t0_value = (/*depositPercent*/ ctx[7] || "") + "")) set_data_dev(t0, t0_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_2.name,
+    		type: "else",
+    		source: "(75:6) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (68:6) {#if depositPercent < 25}
+    function create_if_block_14(ctx) {
+    	let p0;
+    	let t0_value = (/*depositPercent*/ ctx[7] || "") + "";
+    	let t0;
+    	let span;
+    	let t2;
+    	let p1;
+
+    	const block = {
+    		c: function create() {
+    			p0 = element("p");
+    			t0 = text(t0_value);
+    			span = element("span");
+    			span.textContent = "%,";
+    			t2 = space();
+    			p1 = element("p");
+    			p1.textContent = "Generally, the deposit should be at least 25%";
+    			add_location(span, file, 69, 30, 1692);
+    			attr_dev(p0, "class", "note svelte-nsiq2q");
+    			add_location(p0, file, 68, 7, 1645);
+    			attr_dev(p1, "class", "note warning svelte-nsiq2q");
+    			add_location(p1, file, 71, 7, 1728);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p0, anchor);
+    			append_dev(p0, t0);
+    			append_dev(p0, span);
+    			insert_dev(target, t2, anchor);
+    			insert_dev(target, p1, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*depositPercent*/ 128 && t0_value !== (t0_value = (/*depositPercent*/ ctx[7] || "") + "")) set_data_dev(t0, t0_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p0);
+    			if (detaching) detach_dev(t2);
+    			if (detaching) detach_dev(p1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_14.name,
+    		type: "if",
+    		source: "(68:6) {#if depositPercent < 25}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (126:38) 
+    function create_if_block_13(ctx) {
+    	let input;
+    	let input_value_value;
+
+    	const block = {
+    		c: function create() {
+    			input = element("input");
+    			attr_dev(input, "type", "number");
+    			attr_dev(input, "id", "stamp-duty");
+    			input.value = input_value_value = 250000 * 0.03 + (925000 - 250000) * 0.08 + (1500000 - 925000) * 0.13 + (/*housePrice*/ ctx[0] - 1500000) * 0.15;
+    			input.readOnly = true;
+    			attr_dev(input, "class", "svelte-nsiq2q");
+    			add_location(input, file, 126, 8, 3155);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, input, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*housePrice*/ 1 && input_value_value !== (input_value_value = 250000 * 0.03 + (925000 - 250000) * 0.08 + (1500000 - 925000) * 0.13 + (/*housePrice*/ ctx[0] - 1500000) * 0.15) && input.value !== input_value_value) {
+    				prop_dev(input, "value", input_value_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(input);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_13.name,
+    		type: "if",
+    		source: "(126:38) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (117:62) 
+    function create_if_block_12(ctx) {
+    	let input;
+    	let input_value_value;
+
+    	const block = {
+    		c: function create() {
+    			input = element("input");
+    			attr_dev(input, "type", "number");
+    			attr_dev(input, "id", "stamp-duty");
+    			input.value = input_value_value = 250000 * 0.03 + (925000 - 250000) * 0.08 + (/*housePrice*/ ctx[0] - 925000) * 0.13;
+    			input.readOnly = true;
+    			attr_dev(input, "class", "svelte-nsiq2q");
+    			add_location(input, file, 117, 8, 2915);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, input, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*housePrice*/ 1 && input_value_value !== (input_value_value = 250000 * 0.03 + (925000 - 250000) * 0.08 + (/*housePrice*/ ctx[0] - 925000) * 0.13) && input.value !== input_value_value) {
+    				prop_dev(input, "value", input_value_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(input);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_12.name,
+    		type: "if",
+    		source: "(117:62) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (109:61) 
+    function create_if_block_11(ctx) {
+    	let input;
+    	let input_value_value;
+
+    	const block = {
+    		c: function create() {
+    			input = element("input");
+    			attr_dev(input, "type", "number");
+    			attr_dev(input, "id", "stamp-duty");
+    			input.value = input_value_value = 250000 * 0.03 + (/*housePrice*/ ctx[0] - 250000) * 0.08;
+    			input.readOnly = true;
+    			attr_dev(input, "class", "svelte-nsiq2q");
+    			add_location(input, file, 109, 8, 2688);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, input, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*housePrice*/ 1 && input_value_value !== (input_value_value = 250000 * 0.03 + (/*housePrice*/ ctx[0] - 250000) * 0.08) && input.value !== input_value_value) {
+    				prop_dev(input, "value", input_value_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(input);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_11.name,
+    		type: "if",
+    		source: "(109:61) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (102:60) 
+    function create_if_block_10(ctx) {
+    	let input;
+    	let input_value_value;
+
+    	const block = {
+    		c: function create() {
+    			input = element("input");
+    			attr_dev(input, "type", "number");
+    			attr_dev(input, "id", "stamp-duty");
+    			input.value = input_value_value = /*housePrice*/ ctx[0] * 0.03;
+    			input.readOnly = true;
+    			attr_dev(input, "class", "svelte-nsiq2q");
+    			add_location(input, file, 102, 8, 2499);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, input, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*housePrice*/ 1 && input_value_value !== (input_value_value = /*housePrice*/ ctx[0] * 0.03) && input.value !== input_value_value) {
+    				prop_dev(input, "value", input_value_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(input);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_10.name,
+    		type: "if",
+    		source: "(102:60) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (95:37) 
+    function create_if_block_9(ctx) {
+    	let input;
+
+    	const block = {
+    		c: function create() {
+    			input = element("input");
+    			attr_dev(input, "type", "number");
+    			attr_dev(input, "id", "stamp-duty");
+    			input.value = "0";
+    			input.readOnly = true;
+    			attr_dev(input, "class", "svelte-nsiq2q");
+    			add_location(input, file, 95, 8, 2327);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, input, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(input);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_9.name,
+    		type: "if",
+    		source: "(95:37) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (87:7) {#if !housePrice}
+    function create_if_block_8(ctx) {
+    	let input;
+
+    	const block = {
+    		c: function create() {
+    			input = element("input");
+    			attr_dev(input, "type", "number");
+    			attr_dev(input, "id", "stamp-duty");
+    			input.value = "";
+    			attr_dev(input, "placeholder", "We will calculate this");
+    			input.readOnly = true;
+    			attr_dev(input, "class", "svelte-nsiq2q");
+    			add_location(input, file, 87, 8, 2133);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, input, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(input);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_8.name,
+    		type: "if",
+    		source: "(87:7) {#if !housePrice}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (180:38) 
+    function create_if_block_7(ctx) {
+    	let p;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "For properties above £1.5m, 15% tiered";
+    			add_location(p, file, 180, 8, 4688);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_7.name,
+    		type: "if",
+    		source: "(180:38) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (175:62) 
+    function create_if_block_6(ctx) {
+    	let p;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "For properties between £925,001 and £1.5m,\n\t\t\t\t\t\t\t\t\t13% tiered";
+    			add_location(p, file, 175, 8, 4552);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_6.name,
+    		type: "if",
+    		source: "(175:62) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (170:61) 
+    function create_if_block_5(ctx) {
+    	let p;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "For properties between £250,001 and\n\t\t\t\t\t\t\t\t\t£925,000, 8% tiered";
+    			add_location(p, file, 170, 8, 4390);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_5.name,
+    		type: "if",
+    		source: "(170:61) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (165:60) 
+    function create_if_block_4(ctx) {
+    	let p;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "For properties between £40,001 and £250,000,\n\t\t\t\t\t\t\t\t\t3% on full property price";
+    			add_location(p, file, 165, 8, 4214);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_4.name,
+    		type: "if",
+    		source: "(165:60) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (160:37) 
+    function create_if_block_3(ctx) {
+    	let p;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "No stamp duty required for properties below\n\t\t\t\t\t\t\t\t\t£40,000";
+    			add_location(p, file, 160, 8, 4058);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3.name,
+    		type: "if",
+    		source: "(160:37) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (158:7) {#if !housePrice}
+    function create_if_block_2(ctx) {
+    	let p;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Remember, stamp duty is tiered";
+    			add_location(p, file, 158, 8, 3974);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(158:7) {#if !housePrice}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (196:7) {:else}
+    function create_else_block_1(ctx) {
+    	let p;
+    	let t_value = /*requiredMortgage*/ ctx[3].toLocaleString("en") + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t = text(t_value);
+    			add_location(p, file, 196, 8, 5118);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*requiredMortgage*/ 8 && t_value !== (t_value = /*requiredMortgage*/ ctx[3].toLocaleString("en") + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_1.name,
+    		type: "else",
+    		source: "(196:7) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (194:7) {#if !requiredMortgage}
+    function create_if_block_1(ctx) {
+    	let p;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "£";
+    			add_location(p, file, 194, 8, 5086);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(194:7) {#if !requiredMortgage}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (212:7) {:else}
+    function create_else_block(ctx) {
+    	let p;
+    	let t0;
+    	let t1_value = /*annualRentalIncome*/ ctx[4].toLocaleString("en") + "";
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text("£");
+    			t1 = text(t1_value);
+    			add_location(p, file, 212, 8, 5556);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			append_dev(p, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*annualRentalIncome*/ 16 && t1_value !== (t1_value = /*annualRentalIncome*/ ctx[4].toLocaleString("en") + "")) set_data_dev(t1, t1_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block.name,
+    		type: "else",
+    		source: "(212:7) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (210:7) {#if !annualRentalIncome}
+    function create_if_block(ctx) {
+    	let p;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "£";
+    			add_location(p, file, 210, 8, 5524);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(210:7) {#if !annualRentalIncome}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     function create_fragment(ctx) {
     	let main;
     	let header;
@@ -377,7 +1009,7 @@ var app = (function () {
     	let t1;
     	let p0;
     	let t3;
-    	let div30;
+    	let div33;
     	let div1;
     	let img;
     	let img_src_value;
@@ -386,95 +1018,132 @@ var app = (function () {
     	let p1;
     	let t6;
     	let ul;
-    	let li0;
+    	let li;
     	let t8;
-    	let li1;
-    	let t10;
-    	let div29;
-    	let div28;
+    	let div32;
+    	let div31;
     	let p2;
-    	let t12;
+    	let t10;
     	let div14;
     	let div4;
     	let div2;
     	let p3;
-    	let t14;
+    	let t12;
     	let div3;
     	let p4;
-    	let t16;
+    	let t14;
     	let input0;
-    	let t17;
+    	let t15;
     	let div7;
     	let div5;
     	let p5;
-    	let t19;
+    	let t17;
     	let div6;
     	let p6;
-    	let t21;
+    	let t19;
     	let input1;
-    	let t22;
-    	let p7;
-    	let t23_value = (/*depositPercent*/ ctx[8] || "") + "";
-    	let t23;
-    	let t24;
-    	let span0;
-    	let t26;
+    	let t20;
+    	let t21;
     	let div10;
     	let div8;
-    	let p8;
-    	let t28;
+    	let p7;
+    	let t23;
     	let div9;
+    	let p8;
+    	let t25;
+    	let t26;
+    	let div13;
+    	let div11;
     	let p9;
+    	let t28;
+    	let div12;
+    	let p10;
     	let t30;
     	let input2;
     	let t31;
-    	let div13;
-    	let div11;
-    	let p10;
-    	let t33;
-    	let div12;
-    	let p11;
-    	let t35;
-    	let input3;
-    	let t36;
-    	let div27;
+    	let div30;
     	let div17;
     	let div15;
-    	let t38;
+    	let t33;
     	let div16;
-    	let span1;
-    	let t39_value = (/*yieldCalc*/ ctx[6] || "") + "";
-    	let t39;
-    	let t40;
-    	let t41;
+    	let t34;
     	let div20;
     	let div18;
-    	let t43;
+    	let t36;
     	let div19;
-    	let span2;
-    	let t44;
-    	let t45_value = (/*requiredMortgage*/ ctx[3] || "") + "";
-    	let t45;
-    	let t46;
+    	let span0;
+    	let t37_value = (/*yieldCalc*/ ctx[6] || "") + "";
+    	let t37;
+    	let t38;
+    	let t39;
     	let div23;
     	let div21;
-    	let t48;
+    	let t41;
     	let div22;
-    	let span3;
-    	let t49_value = (/*ltv*/ ctx[5] || "") + "";
-    	let t49;
-    	let t50;
-    	let t51;
+    	let t42;
     	let div26;
     	let div24;
-    	let t53;
+    	let t44;
     	let div25;
-    	let span4;
-    	let t54;
-    	let t55_value = (/*annualRentalIncome*/ ctx[4] || "") + "";
-    	let t55;
+    	let span1;
+    	let t45_value = (/*ltv*/ ctx[5] || "") + "";
+    	let t45;
+    	let t46;
+    	let t47;
+    	let div29;
+    	let div27;
+    	let t49;
+    	let div28;
     	let mounted;
     	let dispose;
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*depositPercent*/ ctx[7] < 25) return create_if_block_14;
+    		return create_else_block_2;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block0 = current_block_type(ctx);
+
+    	function select_block_type_1(ctx, dirty) {
+    		if (!/*housePrice*/ ctx[0]) return create_if_block_8;
+    		if (/*housePrice*/ ctx[0] <= 40000) return create_if_block_9;
+    		if (/*housePrice*/ ctx[0] > 40000 && /*housePrice*/ ctx[0] <= 250000) return create_if_block_10;
+    		if (/*housePrice*/ ctx[0] > 250000 && /*housePrice*/ ctx[0] <= 925000) return create_if_block_11;
+    		if (/*housePrice*/ ctx[0] > 925000 && /*housePrice*/ ctx[0] <= 1500000) return create_if_block_12;
+    		if (/*housePrice*/ ctx[0] > 1500000) return create_if_block_13;
+    	}
+
+    	let current_block_type_1 = select_block_type_1(ctx);
+    	let if_block1 = current_block_type_1 && current_block_type_1(ctx);
+
+    	function select_block_type_2(ctx, dirty) {
+    		if (!/*housePrice*/ ctx[0]) return create_if_block_2;
+    		if (/*housePrice*/ ctx[0] <= 40000) return create_if_block_3;
+    		if (/*housePrice*/ ctx[0] > 40000 && /*housePrice*/ ctx[0] <= 250000) return create_if_block_4;
+    		if (/*housePrice*/ ctx[0] > 250000 && /*housePrice*/ ctx[0] <= 925000) return create_if_block_5;
+    		if (/*housePrice*/ ctx[0] > 925000 && /*housePrice*/ ctx[0] <= 1500000) return create_if_block_6;
+    		if (/*housePrice*/ ctx[0] > 1500000) return create_if_block_7;
+    	}
+
+    	let current_block_type_2 = select_block_type_2(ctx);
+    	let if_block2 = current_block_type_2 && current_block_type_2(ctx);
+
+    	function select_block_type_3(ctx, dirty) {
+    		if (!/*requiredMortgage*/ ctx[3]) return create_if_block_1;
+    		return create_else_block_1;
+    	}
+
+    	let current_block_type_3 = select_block_type_3(ctx);
+    	let if_block3 = current_block_type_3(ctx);
+
+    	function select_block_type_4(ctx, dirty) {
+    		if (!/*annualRentalIncome*/ ctx[4]) return create_if_block;
+    		return create_else_block;
+    	}
+
+    	let current_block_type_4 = select_block_type_4(ctx);
+    	let if_block4 = current_block_type_4(ctx);
 
     	const block = {
     		c: function create() {
@@ -486,7 +1155,7 @@ var app = (function () {
     			p0 = element("p");
     			p0.textContent = "Buy to Let • UK";
     			t3 = space();
-    			div30 = element("div");
+    			div33 = element("div");
     			div1 = element("div");
     			img = element("img");
     			t4 = space();
@@ -495,235 +1164,222 @@ var app = (function () {
     			p1.textContent = "Notes:";
     			t6 = space();
     			ul = element("ul");
-    			li0 = element("li");
-    			li0.textContent = "If taking out mortgage, generally, deposit should be at\n\t\t\t\t\t\tleast 25% of property price, loan-to-value should be 75%\n\t\t\t\t\t\t(subject to individual lender's requirements).";
+    			li = element("li");
+    			li.textContent = "Upon sale, the investment property could incur a capital\n\t\t\t\t\t\tgains tax.";
     			t8 = space();
-    			li1 = element("li");
-    			li1.textContent = "Upon sale, the investment property could incur a capital\n\t\t\t\t\t\tgains tax.";
-    			t10 = space();
-    			div29 = element("div");
-    			div28 = element("div");
+    			div32 = element("div");
+    			div31 = element("div");
     			p2 = element("p");
-    			p2.textContent = `${/*message*/ ctx[9]}`;
-    			t12 = space();
+    			p2.textContent = `${/*message*/ ctx[8]}`;
+    			t10 = space();
     			div14 = element("div");
     			div4 = element("div");
     			div2 = element("div");
     			p3 = element("p");
     			p3.textContent = "House Price";
-    			t14 = space();
+    			t12 = space();
     			div3 = element("div");
     			p4 = element("p");
     			p4.textContent = "£";
-    			t16 = space();
+    			t14 = space();
     			input0 = element("input");
-    			t17 = space();
+    			t15 = space();
     			div7 = element("div");
     			div5 = element("div");
     			p5 = element("p");
     			p5.textContent = "Deposit";
-    			t19 = space();
+    			t17 = space();
     			div6 = element("div");
     			p6 = element("p");
     			p6.textContent = "£";
-    			t21 = space();
+    			t19 = space();
     			input1 = element("input");
-    			t22 = space();
-    			p7 = element("p");
-    			t23 = text(t23_value);
-    			t24 = space();
-    			span0 = element("span");
-    			span0.textContent = "%";
-    			t26 = space();
+    			t20 = space();
+    			if_block0.c();
+    			t21 = space();
     			div10 = element("div");
     			div8 = element("div");
-    			p8 = element("p");
-    			p8.textContent = "Stamp Duty";
-    			t28 = space();
+    			p7 = element("p");
+    			p7.textContent = "Stamp Duty";
+    			t23 = space();
     			div9 = element("div");
+    			p8 = element("p");
+    			p8.textContent = "£";
+    			t25 = space();
+    			if (if_block1) if_block1.c();
+    			t26 = space();
+    			div13 = element("div");
+    			div11 = element("div");
     			p9 = element("p");
-    			p9.textContent = "£";
+    			p9.textContent = "Estimated Monthly Rental Income";
+    			t28 = space();
+    			div12 = element("div");
+    			p10 = element("p");
+    			p10.textContent = "£";
     			t30 = space();
     			input2 = element("input");
     			t31 = space();
-    			div13 = element("div");
-    			div11 = element("div");
-    			p10 = element("p");
-    			p10.textContent = "Estimated Monthly Rental Income";
-    			t33 = space();
-    			div12 = element("div");
-    			p11 = element("p");
-    			p11.textContent = "£";
-    			t35 = space();
-    			input3 = element("input");
-    			t36 = space();
-    			div27 = element("div");
+    			div30 = element("div");
     			div17 = element("div");
     			div15 = element("div");
-    			div15.textContent = "Yield:";
-    			t38 = space();
+    			div15.textContent = "Stamp Duty Notes:";
+    			t33 = space();
     			div16 = element("div");
-    			span1 = element("span");
-    			t39 = text(t39_value);
-    			t40 = text("%");
-    			t41 = space();
+    			if (if_block2) if_block2.c();
+    			t34 = space();
     			div20 = element("div");
     			div18 = element("div");
-    			div18.textContent = "Mortgage Required:";
-    			t43 = space();
+    			div18.textContent = "Yield:";
+    			t36 = space();
     			div19 = element("div");
-    			span2 = element("span");
-    			t44 = text("£");
-    			t45 = text(t45_value);
-    			t46 = space();
+    			span0 = element("span");
+    			t37 = text(t37_value);
+    			t38 = text("%");
+    			t39 = space();
     			div23 = element("div");
     			div21 = element("div");
-    			div21.textContent = "Loan-to-Value:";
-    			t48 = space();
+    			div21.textContent = "Mortgage Required:";
+    			t41 = space();
     			div22 = element("div");
-    			span3 = element("span");
-    			t49 = text(t49_value);
-    			t50 = text("%");
-    			t51 = space();
+    			if_block3.c();
+    			t42 = space();
     			div26 = element("div");
     			div24 = element("div");
-    			div24.textContent = "Annual Rental Income:";
-    			t53 = space();
+    			div24.textContent = "Loan-to-Value:";
+    			t44 = space();
     			div25 = element("div");
-    			span4 = element("span");
-    			t54 = text("£");
-    			t55 = text(t55_value);
-    			attr_dev(h1, "class", "svelte-1bhnu1u");
-    			add_location(h1, file, 17, 2, 468);
-    			attr_dev(p0, "class", "description svelte-1bhnu1u");
-    			add_location(p0, file, 18, 2, 510);
-    			add_location(header, file, 16, 1, 457);
+    			span1 = element("span");
+    			t45 = text(t45_value);
+    			t46 = text("%");
+    			t47 = space();
+    			div29 = element("div");
+    			div27 = element("div");
+    			div27.textContent = "Annual Rental Income:";
+    			t49 = space();
+    			div28 = element("div");
+    			if_block4.c();
+    			attr_dev(h1, "class", "svelte-nsiq2q");
+    			add_location(h1, file, 16, 2, 433);
+    			attr_dev(p0, "class", "description svelte-nsiq2q");
+    			add_location(p0, file, 17, 2, 475);
+    			add_location(header, file, 15, 1, 422);
     			if (!src_url_equal(img.src, img_src_value = "house.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "buy-to-let property investment calculator");
-    			attr_dev(img, "class", "svelte-1bhnu1u");
-    			add_location(img, file, 22, 3, 623);
-    			attr_dev(p1, "class", "svelte-1bhnu1u");
-    			add_location(p1, file, 27, 4, 733);
-    			attr_dev(li0, "class", "svelte-1bhnu1u");
-    			add_location(li0, file, 29, 5, 761);
-    			attr_dev(li1, "class", "svelte-1bhnu1u");
-    			add_location(li1, file, 34, 5, 960);
-    			attr_dev(ul, "class", "svelte-1bhnu1u");
-    			add_location(ul, file, 28, 4, 751);
-    			attr_dev(div0, "class", "notes svelte-1bhnu1u");
-    			add_location(div0, file, 26, 3, 709);
-    			attr_dev(div1, "class", "framework-left svelte-1bhnu1u");
-    			add_location(div1, file, 21, 2, 591);
-    			attr_dev(p2, "class", "message svelte-1bhnu1u");
-    			add_location(p2, file, 44, 4, 1157);
-    			attr_dev(p3, "class", "name svelte-1bhnu1u");
-    			add_location(p3, file, 48, 7, 1290);
+    			attr_dev(img, "class", "svelte-nsiq2q");
+    			add_location(img, file, 21, 3, 588);
+    			attr_dev(p1, "class", "svelte-nsiq2q");
+    			add_location(p1, file, 26, 4, 698);
+    			attr_dev(li, "class", "svelte-nsiq2q");
+    			add_location(li, file, 28, 5, 726);
+    			attr_dev(ul, "class", "svelte-nsiq2q");
+    			add_location(ul, file, 27, 4, 716);
+    			attr_dev(div0, "class", "notes svelte-nsiq2q");
+    			add_location(div0, file, 25, 3, 674);
+    			attr_dev(div1, "class", "framework-left svelte-nsiq2q");
+    			add_location(div1, file, 20, 2, 556);
+    			attr_dev(p2, "class", "message svelte-nsiq2q");
+    			add_location(p2, file, 38, 4, 923);
+    			attr_dev(p3, "class", "name svelte-nsiq2q");
+    			add_location(p3, file, 42, 7, 1056);
     			attr_dev(div2, "class", "section-top");
-    			add_location(div2, file, 47, 6, 1257);
-    			attr_dev(p4, "class", "svelte-1bhnu1u");
-    			add_location(p4, file, 51, 7, 1377);
+    			add_location(div2, file, 41, 6, 1023);
+    			attr_dev(p4, "class", "svelte-nsiq2q");
+    			add_location(p4, file, 45, 7, 1143);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "id", "house-price");
     			attr_dev(input0, "placeholder", "100,000");
-    			attr_dev(input0, "class", "svelte-1bhnu1u");
-    			add_location(input0, file, 52, 7, 1393);
-    			attr_dev(div3, "class", "section-bottom svelte-1bhnu1u");
-    			add_location(div3, file, 50, 6, 1341);
-    			attr_dev(div4, "class", "section svelte-1bhnu1u");
-    			add_location(div4, file, 46, 5, 1229);
-    			attr_dev(p5, "class", "name svelte-1bhnu1u");
-    			add_location(p5, file, 62, 7, 1610);
+    			attr_dev(input0, "class", "svelte-nsiq2q");
+    			add_location(input0, file, 46, 7, 1159);
+    			attr_dev(div3, "class", "section-bottom svelte-nsiq2q");
+    			add_location(div3, file, 44, 6, 1107);
+    			attr_dev(div4, "class", "section svelte-nsiq2q");
+    			add_location(div4, file, 40, 5, 995);
+    			attr_dev(p5, "class", "name svelte-nsiq2q");
+    			add_location(p5, file, 56, 7, 1376);
     			attr_dev(div5, "class", "section-top");
-    			add_location(div5, file, 61, 6, 1577);
-    			attr_dev(p6, "class", "svelte-1bhnu1u");
-    			add_location(p6, file, 65, 7, 1693);
+    			add_location(div5, file, 55, 6, 1343);
+    			attr_dev(p6, "class", "svelte-nsiq2q");
+    			add_location(p6, file, 59, 7, 1459);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "id", "deposit");
     			attr_dev(input1, "placeholder", "20,000");
-    			attr_dev(input1, "class", "svelte-1bhnu1u");
-    			add_location(input1, file, 66, 7, 1709);
-    			attr_dev(div6, "class", "section-bottom svelte-1bhnu1u");
-    			add_location(div6, file, 64, 6, 1657);
-    			add_location(span0, file, 74, 30, 1893);
-    			attr_dev(p7, "class", "note svelte-1bhnu1u");
-    			add_location(p7, file, 73, 6, 1846);
-    			attr_dev(div7, "class", "section svelte-1bhnu1u");
-    			add_location(div7, file, 60, 5, 1549);
-    			attr_dev(p8, "class", "name svelte-1bhnu1u");
-    			add_location(p8, file, 79, 7, 1997);
+    			attr_dev(input1, "class", "svelte-nsiq2q");
+    			add_location(input1, file, 60, 7, 1475);
+    			attr_dev(div6, "class", "section-bottom svelte-nsiq2q");
+    			add_location(div6, file, 58, 6, 1423);
+    			attr_dev(div7, "class", "section svelte-nsiq2q");
+    			add_location(div7, file, 54, 5, 1315);
+    			attr_dev(p7, "class", "name svelte-nsiq2q");
+    			add_location(p7, file, 82, 7, 2005);
     			attr_dev(div8, "class", "section-top");
-    			add_location(div8, file, 78, 6, 1964);
-    			attr_dev(p9, "class", "svelte-1bhnu1u");
-    			add_location(p9, file, 82, 7, 2083);
-    			attr_dev(input2, "type", "number");
-    			attr_dev(input2, "id", "stamp-duty");
-    			attr_dev(input2, "placeholder", "We will calculate this");
-    			input2.readOnly = true;
-    			attr_dev(input2, "class", "svelte-1bhnu1u");
-    			add_location(input2, file, 83, 7, 2099);
-    			attr_dev(div9, "class", "section-bottom svelte-1bhnu1u");
-    			add_location(div9, file, 81, 6, 2047);
-    			attr_dev(div10, "class", "section svelte-1bhnu1u");
-    			add_location(div10, file, 77, 5, 1936);
-    			attr_dev(p10, "class", "name svelte-1bhnu1u");
-    			add_location(p10, file, 94, 7, 2346);
+    			add_location(div8, file, 81, 6, 1972);
+    			attr_dev(p8, "class", "svelte-nsiq2q");
+    			add_location(p8, file, 85, 7, 2091);
+    			attr_dev(div9, "class", "section-bottom svelte-nsiq2q");
+    			add_location(div9, file, 84, 6, 2055);
+    			attr_dev(div10, "class", "section svelte-nsiq2q");
+    			add_location(div10, file, 80, 5, 1944);
+    			attr_dev(p9, "class", "name svelte-nsiq2q");
+    			add_location(p9, file, 140, 7, 3491);
     			attr_dev(div11, "class", "section-top");
-    			add_location(div11, file, 93, 6, 2313);
-    			attr_dev(p11, "class", "svelte-1bhnu1u");
-    			add_location(p11, file, 97, 7, 2453);
-    			attr_dev(input3, "type", "number");
-    			attr_dev(input3, "id", "monthly-rental-income");
-    			attr_dev(input3, "placeholder", "800");
-    			attr_dev(input3, "class", "svelte-1bhnu1u");
-    			add_location(input3, file, 98, 7, 2469);
-    			attr_dev(div12, "class", "section-bottom svelte-1bhnu1u");
-    			add_location(div12, file, 96, 6, 2417);
-    			attr_dev(div13, "class", "section svelte-1bhnu1u");
-    			add_location(div13, file, 92, 5, 2285);
-    			attr_dev(div14, "class", "calc calc-input svelte-1bhnu1u");
-    			add_location(div14, file, 45, 4, 1194);
-    			attr_dev(div15, "class", "col left svelte-1bhnu1u");
-    			add_location(div15, file, 109, 6, 2710);
+    			add_location(div11, file, 139, 6, 3458);
+    			attr_dev(p10, "class", "svelte-nsiq2q");
+    			add_location(p10, file, 143, 7, 3598);
+    			attr_dev(input2, "type", "number");
+    			attr_dev(input2, "id", "monthly-rental-income");
+    			attr_dev(input2, "placeholder", "800");
+    			attr_dev(input2, "class", "svelte-nsiq2q");
+    			add_location(input2, file, 144, 7, 3614);
+    			attr_dev(div12, "class", "section-bottom svelte-nsiq2q");
+    			add_location(div12, file, 142, 6, 3562);
+    			attr_dev(div13, "class", "section svelte-nsiq2q");
+    			add_location(div13, file, 138, 5, 3430);
+    			attr_dev(div14, "class", "calc calc-input svelte-nsiq2q");
+    			add_location(div14, file, 39, 4, 960);
+    			attr_dev(div15, "class", "col left note svelte-nsiq2q");
+    			add_location(div15, file, 155, 6, 3855);
+    			attr_dev(div16, "class", "col right note svelte-nsiq2q");
+    			add_location(div16, file, 156, 6, 3912);
+    			attr_dev(div17, "class", "row svelte-nsiq2q");
+    			add_location(div17, file, 154, 5, 3831);
+    			attr_dev(div18, "class", "col left svelte-nsiq2q");
+    			add_location(div18, file, 185, 6, 4801);
+    			attr_dev(span0, "id", "yield");
+    			add_location(span0, file, 187, 7, 4873);
+    			attr_dev(div19, "class", "col right svelte-nsiq2q");
+    			add_location(div19, file, 186, 6, 4842);
+    			attr_dev(div20, "class", "row svelte-nsiq2q");
+    			add_location(div20, file, 184, 5, 4777);
+    			attr_dev(div21, "class", "col left svelte-nsiq2q");
+    			add_location(div21, file, 191, 6, 4970);
+    			attr_dev(div22, "class", "col right svelte-nsiq2q");
+    			add_location(div22, file, 192, 6, 5023);
+    			attr_dev(div23, "class", "row svelte-nsiq2q");
+    			add_location(div23, file, 190, 5, 4946);
+    			attr_dev(div24, "class", "col left svelte-nsiq2q");
+    			add_location(div24, file, 201, 6, 5232);
     			attr_dev(span1, "id", "yield");
-    			add_location(span1, file, 111, 7, 2782);
-    			attr_dev(div16, "class", "col right svelte-1bhnu1u");
-    			add_location(div16, file, 110, 6, 2751);
-    			attr_dev(div17, "class", "row svelte-1bhnu1u");
-    			add_location(div17, file, 108, 5, 2686);
-    			attr_dev(div18, "class", "col left svelte-1bhnu1u");
-    			add_location(div18, file, 115, 6, 2879);
-    			attr_dev(span2, "id", "mortgage");
-    			add_location(span2, file, 117, 7, 2963);
-    			attr_dev(div19, "class", "col right svelte-1bhnu1u");
-    			add_location(div19, file, 116, 6, 2932);
-    			attr_dev(div20, "class", "row svelte-1bhnu1u");
-    			add_location(div20, file, 114, 5, 2855);
-    			attr_dev(div21, "class", "col left svelte-1bhnu1u");
-    			add_location(div21, file, 121, 6, 3070);
-    			attr_dev(span3, "id", "ltv");
-    			add_location(span3, file, 123, 7, 3150);
-    			attr_dev(div22, "class", "col right svelte-1bhnu1u");
-    			add_location(div22, file, 122, 6, 3119);
-    			attr_dev(div23, "class", "row svelte-1bhnu1u");
-    			add_location(div23, file, 120, 5, 3046);
-    			attr_dev(div24, "class", "col left svelte-1bhnu1u");
-    			add_location(div24, file, 127, 6, 3239);
-    			attr_dev(span4, "id", "annual-rental-income");
-    			add_location(span4, file, 129, 7, 3326);
-    			attr_dev(div25, "class", "col right svelte-1bhnu1u");
-    			add_location(div25, file, 128, 6, 3295);
-    			attr_dev(div26, "class", "row svelte-1bhnu1u");
-    			add_location(div26, file, 126, 5, 3215);
-    			attr_dev(div27, "class", "calc calc-output svelte-1bhnu1u");
-    			add_location(div27, file, 107, 4, 2650);
-    			attr_dev(div28, "class", "container general svelte-1bhnu1u");
-    			add_location(div28, file, 43, 3, 1121);
-    			attr_dev(div29, "class", "framework-right svelte-1bhnu1u");
-    			add_location(div29, file, 42, 2, 1088);
-    			attr_dev(div30, "class", "framework svelte-1bhnu1u");
-    			add_location(div30, file, 20, 1, 565);
-    			attr_dev(main, "class", "svelte-1bhnu1u");
-    			add_location(main, file, 15, 0, 449);
+    			add_location(span1, file, 203, 7, 5312);
+    			attr_dev(div25, "class", "col right svelte-nsiq2q");
+    			add_location(div25, file, 202, 6, 5281);
+    			attr_dev(div26, "class", "row svelte-nsiq2q");
+    			add_location(div26, file, 200, 5, 5208);
+    			attr_dev(div27, "class", "col left svelte-nsiq2q");
+    			add_location(div27, file, 207, 6, 5403);
+    			attr_dev(div28, "class", "col right svelte-nsiq2q");
+    			add_location(div28, file, 208, 6, 5459);
+    			attr_dev(div29, "class", "row svelte-nsiq2q");
+    			add_location(div29, file, 206, 5, 5379);
+    			attr_dev(div30, "class", "calc calc-output svelte-nsiq2q");
+    			add_location(div30, file, 153, 4, 3795);
+    			attr_dev(div31, "class", "container general svelte-nsiq2q");
+    			add_location(div31, file, 37, 3, 887);
+    			attr_dev(div32, "class", "framework-right svelte-nsiq2q");
+    			add_location(div32, file, 36, 2, 854);
+    			attr_dev(div33, "class", "framework svelte-nsiq2q");
+    			add_location(div33, file, 19, 1, 530);
+    			attr_dev(main, "class", "svelte-nsiq2q");
+    			add_location(main, file, 14, 0, 414);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -735,107 +1391,102 @@ var app = (function () {
     			append_dev(header, t1);
     			append_dev(header, p0);
     			append_dev(main, t3);
-    			append_dev(main, div30);
-    			append_dev(div30, div1);
+    			append_dev(main, div33);
+    			append_dev(div33, div1);
     			append_dev(div1, img);
     			append_dev(div1, t4);
     			append_dev(div1, div0);
     			append_dev(div0, p1);
     			append_dev(div0, t6);
     			append_dev(div0, ul);
-    			append_dev(ul, li0);
-    			append_dev(ul, t8);
-    			append_dev(ul, li1);
-    			append_dev(div30, t10);
-    			append_dev(div30, div29);
-    			append_dev(div29, div28);
-    			append_dev(div28, p2);
-    			append_dev(div28, t12);
-    			append_dev(div28, div14);
+    			append_dev(ul, li);
+    			append_dev(div33, t8);
+    			append_dev(div33, div32);
+    			append_dev(div32, div31);
+    			append_dev(div31, p2);
+    			append_dev(div31, t10);
+    			append_dev(div31, div14);
     			append_dev(div14, div4);
     			append_dev(div4, div2);
     			append_dev(div2, p3);
-    			append_dev(div4, t14);
+    			append_dev(div4, t12);
     			append_dev(div4, div3);
     			append_dev(div3, p4);
-    			append_dev(div3, t16);
+    			append_dev(div3, t14);
     			append_dev(div3, input0);
     			set_input_value(input0, /*housePrice*/ ctx[0]);
-    			append_dev(div14, t17);
+    			append_dev(div14, t15);
     			append_dev(div14, div7);
     			append_dev(div7, div5);
     			append_dev(div5, p5);
-    			append_dev(div7, t19);
+    			append_dev(div7, t17);
     			append_dev(div7, div6);
     			append_dev(div6, p6);
-    			append_dev(div6, t21);
+    			append_dev(div6, t19);
     			append_dev(div6, input1);
     			set_input_value(input1, /*deposit*/ ctx[1]);
-    			append_dev(div7, t22);
-    			append_dev(div7, p7);
-    			append_dev(p7, t23);
-    			append_dev(p7, t24);
-    			append_dev(p7, span0);
-    			append_dev(div14, t26);
+    			append_dev(div7, t20);
+    			if_block0.m(div7, null);
+    			append_dev(div14, t21);
     			append_dev(div14, div10);
     			append_dev(div10, div8);
-    			append_dev(div8, p8);
-    			append_dev(div10, t28);
+    			append_dev(div8, p7);
+    			append_dev(div10, t23);
     			append_dev(div10, div9);
-    			append_dev(div9, p9);
-    			append_dev(div9, t30);
-    			append_dev(div9, input2);
-    			set_input_value(input2, /*stampDuty*/ ctx[7]);
-    			append_dev(div14, t31);
+    			append_dev(div9, p8);
+    			append_dev(div9, t25);
+    			if (if_block1) if_block1.m(div9, null);
+    			append_dev(div14, t26);
     			append_dev(div14, div13);
     			append_dev(div13, div11);
-    			append_dev(div11, p10);
-    			append_dev(div13, t33);
+    			append_dev(div11, p9);
+    			append_dev(div13, t28);
     			append_dev(div13, div12);
-    			append_dev(div12, p11);
-    			append_dev(div12, t35);
-    			append_dev(div12, input3);
-    			set_input_value(input3, /*monthlyRentalIncome*/ ctx[2]);
-    			append_dev(div28, t36);
-    			append_dev(div28, div27);
-    			append_dev(div27, div17);
+    			append_dev(div12, p10);
+    			append_dev(div12, t30);
+    			append_dev(div12, input2);
+    			set_input_value(input2, /*monthlyRentalIncome*/ ctx[2]);
+    			append_dev(div31, t31);
+    			append_dev(div31, div30);
+    			append_dev(div30, div17);
     			append_dev(div17, div15);
-    			append_dev(div17, t38);
+    			append_dev(div17, t33);
     			append_dev(div17, div16);
-    			append_dev(div16, span1);
-    			append_dev(span1, t39);
-    			append_dev(div16, t40);
-    			append_dev(div27, t41);
-    			append_dev(div27, div20);
+    			if (if_block2) if_block2.m(div16, null);
+    			append_dev(div30, t34);
+    			append_dev(div30, div20);
     			append_dev(div20, div18);
-    			append_dev(div20, t43);
+    			append_dev(div20, t36);
     			append_dev(div20, div19);
-    			append_dev(div19, span2);
-    			append_dev(span2, t44);
-    			append_dev(span2, t45);
-    			append_dev(div27, t46);
-    			append_dev(div27, div23);
+    			append_dev(div19, span0);
+    			append_dev(span0, t37);
+    			append_dev(div19, t38);
+    			append_dev(div30, t39);
+    			append_dev(div30, div23);
     			append_dev(div23, div21);
-    			append_dev(div23, t48);
+    			append_dev(div23, t41);
     			append_dev(div23, div22);
-    			append_dev(div22, span3);
-    			append_dev(span3, t49);
-    			append_dev(div22, t50);
-    			append_dev(div27, t51);
-    			append_dev(div27, div26);
+    			if_block3.m(div22, null);
+    			append_dev(div30, t42);
+    			append_dev(div30, div26);
     			append_dev(div26, div24);
-    			append_dev(div26, t53);
+    			append_dev(div26, t44);
     			append_dev(div26, div25);
-    			append_dev(div25, span4);
-    			append_dev(span4, t54);
-    			append_dev(span4, t55);
+    			append_dev(div25, span1);
+    			append_dev(span1, t45);
+    			append_dev(div25, t46);
+    			append_dev(div30, t47);
+    			append_dev(div30, div29);
+    			append_dev(div29, div27);
+    			append_dev(div29, t49);
+    			append_dev(div29, div28);
+    			if_block4.m(div28, null);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[10]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[11]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[12]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[13])
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[9]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[10]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[11])
     				];
 
     				mounted = true;
@@ -850,25 +1501,88 @@ var app = (function () {
     				set_input_value(input1, /*deposit*/ ctx[1]);
     			}
 
-    			if (dirty & /*depositPercent*/ 256 && t23_value !== (t23_value = (/*depositPercent*/ ctx[8] || "") + "")) set_data_dev(t23, t23_value);
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block0) {
+    				if_block0.p(ctx, dirty);
+    			} else {
+    				if_block0.d(1);
+    				if_block0 = current_block_type(ctx);
 
-    			if (dirty & /*stampDuty*/ 128 && to_number(input2.value) !== /*stampDuty*/ ctx[7]) {
-    				set_input_value(input2, /*stampDuty*/ ctx[7]);
+    				if (if_block0) {
+    					if_block0.c();
+    					if_block0.m(div7, null);
+    				}
     			}
 
-    			if (dirty & /*monthlyRentalIncome*/ 4 && to_number(input3.value) !== /*monthlyRentalIncome*/ ctx[2]) {
-    				set_input_value(input3, /*monthlyRentalIncome*/ ctx[2]);
+    			if (current_block_type_1 === (current_block_type_1 = select_block_type_1(ctx)) && if_block1) {
+    				if_block1.p(ctx, dirty);
+    			} else {
+    				if (if_block1) if_block1.d(1);
+    				if_block1 = current_block_type_1 && current_block_type_1(ctx);
+
+    				if (if_block1) {
+    					if_block1.c();
+    					if_block1.m(div9, null);
+    				}
     			}
 
-    			if (dirty & /*yieldCalc*/ 64 && t39_value !== (t39_value = (/*yieldCalc*/ ctx[6] || "") + "")) set_data_dev(t39, t39_value);
-    			if (dirty & /*requiredMortgage*/ 8 && t45_value !== (t45_value = (/*requiredMortgage*/ ctx[3] || "") + "")) set_data_dev(t45, t45_value);
-    			if (dirty & /*ltv*/ 32 && t49_value !== (t49_value = (/*ltv*/ ctx[5] || "") + "")) set_data_dev(t49, t49_value);
-    			if (dirty & /*annualRentalIncome*/ 16 && t55_value !== (t55_value = (/*annualRentalIncome*/ ctx[4] || "") + "")) set_data_dev(t55, t55_value);
+    			if (dirty & /*monthlyRentalIncome*/ 4 && to_number(input2.value) !== /*monthlyRentalIncome*/ ctx[2]) {
+    				set_input_value(input2, /*monthlyRentalIncome*/ ctx[2]);
+    			}
+
+    			if (current_block_type_2 !== (current_block_type_2 = select_block_type_2(ctx))) {
+    				if (if_block2) if_block2.d(1);
+    				if_block2 = current_block_type_2 && current_block_type_2(ctx);
+
+    				if (if_block2) {
+    					if_block2.c();
+    					if_block2.m(div16, null);
+    				}
+    			}
+
+    			if (dirty & /*yieldCalc*/ 64 && t37_value !== (t37_value = (/*yieldCalc*/ ctx[6] || "") + "")) set_data_dev(t37, t37_value);
+
+    			if (current_block_type_3 === (current_block_type_3 = select_block_type_3(ctx)) && if_block3) {
+    				if_block3.p(ctx, dirty);
+    			} else {
+    				if_block3.d(1);
+    				if_block3 = current_block_type_3(ctx);
+
+    				if (if_block3) {
+    					if_block3.c();
+    					if_block3.m(div22, null);
+    				}
+    			}
+
+    			if (dirty & /*ltv*/ 32 && t45_value !== (t45_value = (/*ltv*/ ctx[5] || "") + "")) set_data_dev(t45, t45_value);
+
+    			if (current_block_type_4 === (current_block_type_4 = select_block_type_4(ctx)) && if_block4) {
+    				if_block4.p(ctx, dirty);
+    			} else {
+    				if_block4.d(1);
+    				if_block4 = current_block_type_4(ctx);
+
+    				if (if_block4) {
+    					if_block4.c();
+    					if_block4.m(div28, null);
+    				}
+    			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
+    			if_block0.d();
+
+    			if (if_block1) {
+    				if_block1.d();
+    			}
+
+    			if (if_block2) {
+    				if_block2.d();
+    			}
+
+    			if_block3.d();
+    			if_block4.d();
     			mounted = false;
     			run_all(dispose);
     		}
@@ -887,7 +1601,6 @@ var app = (function () {
 
     function instance($$self, $$props, $$invalidate) {
     	let depositPercent;
-    	let stampDuty;
     	let yieldCalc;
     	let requiredMortgage;
     	let annualRentalIncome;
@@ -915,11 +1628,6 @@ var app = (function () {
     	}
 
     	function input2_input_handler() {
-    		stampDuty = to_number(this.value);
-    		($$invalidate(7, stampDuty), $$invalidate(0, housePrice));
-    	}
-
-    	function input3_input_handler() {
     		monthlyRentalIncome = to_number(this.value);
     		$$invalidate(2, monthlyRentalIncome);
     	}
@@ -933,7 +1641,6 @@ var app = (function () {
     		ltv,
     		annualRentalIncome,
     		yieldCalc,
-    		stampDuty,
     		depositPercent
     	});
 
@@ -941,13 +1648,12 @@ var app = (function () {
     		if ('housePrice' in $$props) $$invalidate(0, housePrice = $$props.housePrice);
     		if ('deposit' in $$props) $$invalidate(1, deposit = $$props.deposit);
     		if ('monthlyRentalIncome' in $$props) $$invalidate(2, monthlyRentalIncome = $$props.monthlyRentalIncome);
-    		if ('message' in $$props) $$invalidate(9, message = $$props.message);
+    		if ('message' in $$props) $$invalidate(8, message = $$props.message);
     		if ('requiredMortgage' in $$props) $$invalidate(3, requiredMortgage = $$props.requiredMortgage);
     		if ('ltv' in $$props) $$invalidate(5, ltv = $$props.ltv);
     		if ('annualRentalIncome' in $$props) $$invalidate(4, annualRentalIncome = $$props.annualRentalIncome);
     		if ('yieldCalc' in $$props) $$invalidate(6, yieldCalc = $$props.yieldCalc);
-    		if ('stampDuty' in $$props) $$invalidate(7, stampDuty = $$props.stampDuty);
-    		if ('depositPercent' in $$props) $$invalidate(8, depositPercent = $$props.depositPercent);
+    		if ('depositPercent' in $$props) $$invalidate(7, depositPercent = $$props.depositPercent);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -956,11 +1662,7 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*deposit, housePrice*/ 3) {
-    			$$invalidate(8, depositPercent = deposit / housePrice * 100);
-    		}
-
-    		if ($$self.$$.dirty & /*housePrice*/ 1) {
-    			$$invalidate(7, stampDuty = housePrice * 0.03);
+    			$$invalidate(7, depositPercent = deposit / housePrice * 100);
     		}
 
     		if ($$self.$$.dirty & /*monthlyRentalIncome*/ 4) {
@@ -988,13 +1690,11 @@ var app = (function () {
     		annualRentalIncome,
     		ltv,
     		yieldCalc,
-    		stampDuty,
     		depositPercent,
     		message,
     		input0_input_handler,
     		input1_input_handler,
-    		input2_input_handler,
-    		input3_input_handler
+    		input2_input_handler
     	];
     }
 

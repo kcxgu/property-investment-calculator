@@ -374,7 +374,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Enter required fields below to continue";
-    			attr_dev(p, "class", "message svelte-12mxchm");
+    			attr_dev(p, "class", "message svelte-25pkxp");
     			add_location(p, file, 49, 3, 1307);
     		},
     		m: function mount(target, anchor) {
@@ -404,7 +404,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Generally, deposit should be at least 25% of property price";
-    			attr_dev(p, "class", "warning svelte-12mxchm");
+    			attr_dev(p, "class", "warning svelte-25pkxp");
     			add_location(p, file, 45, 3, 1202);
     		},
     		m: function mount(target, anchor) {
@@ -438,7 +438,7 @@ var app = (function () {
     			attr_dev(input, "id", "stamp-duty");
     			input.value = input_value_value = 250000 * 0.03 + (925000 - 250000) * 0.08 + (1500000 - 925000) * 0.13 + (/*housePrice*/ ctx[0] - 1500000) * 0.15;
     			input.readOnly = true;
-    			attr_dev(input, "class", "svelte-12mxchm");
+    			attr_dev(input, "class", "svelte-25pkxp");
     			add_location(input, file, 129, 6, 3198);
     		},
     		m: function mount(target, anchor) {
@@ -477,7 +477,7 @@ var app = (function () {
     			attr_dev(input, "id", "stamp-duty");
     			input.value = input_value_value = 250000 * 0.03 + (925000 - 250000) * 0.08 + (/*housePrice*/ ctx[0] - 925000) * 0.13;
     			input.readOnly = true;
-    			attr_dev(input, "class", "svelte-12mxchm");
+    			attr_dev(input, "class", "svelte-25pkxp");
     			add_location(input, file, 120, 6, 2976);
     		},
     		m: function mount(target, anchor) {
@@ -516,7 +516,7 @@ var app = (function () {
     			attr_dev(input, "id", "stamp-duty");
     			input.value = input_value_value = 250000 * 0.03 + (/*housePrice*/ ctx[0] - 250000) * 0.08;
     			input.readOnly = true;
-    			attr_dev(input, "class", "svelte-12mxchm");
+    			attr_dev(input, "class", "svelte-25pkxp");
     			add_location(input, file, 113, 6, 2773);
     		},
     		m: function mount(target, anchor) {
@@ -555,7 +555,7 @@ var app = (function () {
     			attr_dev(input, "id", "stamp-duty");
     			input.value = input_value_value = /*housePrice*/ ctx[0] * 0.03;
     			input.readOnly = true;
-    			attr_dev(input, "class", "svelte-12mxchm");
+    			attr_dev(input, "class", "svelte-25pkxp");
     			add_location(input, file, 106, 6, 2598);
     		},
     		m: function mount(target, anchor) {
@@ -593,7 +593,7 @@ var app = (function () {
     			attr_dev(input, "id", "stamp-duty");
     			input.value = "0";
     			input.readOnly = true;
-    			attr_dev(input, "class", "svelte-12mxchm");
+    			attr_dev(input, "class", "svelte-25pkxp");
     			add_location(input, file, 99, 6, 2440);
     		},
     		m: function mount(target, anchor) {
@@ -628,7 +628,7 @@ var app = (function () {
     			input.value = "";
     			attr_dev(input, "placeholder", "We will calculate this");
     			input.readOnly = true;
-    			attr_dev(input, "class", "svelte-12mxchm");
+    			attr_dev(input, "class", "svelte-25pkxp");
     			add_location(input, file, 91, 6, 2262);
     		},
     		m: function mount(target, anchor) {
@@ -966,7 +966,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Enter monthly rental income, monthly mortgage and\n\t\t\t\t\t\t\tmonthly costs to continue";
-    			attr_dev(p, "class", "output-warning svelte-12mxchm");
+    			attr_dev(p, "class", "output-warning svelte-25pkxp");
     			add_location(p, file, 311, 6, 7868);
     		},
     		m: function mount(target, anchor) {
@@ -1035,7 +1035,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Enter monthly rental income, monthly mortgage and\n\t\t\t\t\t\t\tmonthly costs to continue";
-    			attr_dev(p, "class", "output-warning svelte-12mxchm");
+    			attr_dev(p, "class", "output-warning svelte-25pkxp");
     			add_location(p, file, 324, 6, 8269);
     		},
     		m: function mount(target, anchor) {
@@ -1104,7 +1104,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Enter monthly rental income and all additional\n\t\t\t\t\t\t\tcalculation fields to continue";
-    			attr_dev(p, "class", "output-warning svelte-12mxchm");
+    			attr_dev(p, "class", "output-warning svelte-25pkxp");
     			add_location(p, file, 339, 6, 8659);
     		},
     		m: function mount(target, anchor) {
@@ -1598,216 +1598,217 @@ var app = (function () {
     			t92 = space();
     			div51 = element("div");
     			if_block7.c();
-    			attr_dev(h1, "class", "svelte-12mxchm");
+    			attr_dev(h1, "class", "svelte-25pkxp");
     			add_location(h1, file, 22, 2, 597);
-    			attr_dev(p0, "class", "svelte-12mxchm");
+    			attr_dev(p0, "class", "svelte-25pkxp");
     			add_location(p0, file, 23, 2, 639);
-    			attr_dev(header, "class", "svelte-12mxchm");
+    			attr_dev(header, "class", "svelte-25pkxp");
     			add_location(header, file, 21, 1, 586);
-    			attr_dev(p1, "class", "svelte-12mxchm");
+    			attr_dev(p1, "class", "svelte-25pkxp");
     			add_location(p1, file, 27, 2, 697);
     			attr_dev(a, "href", "https://www.moneyhelper.org.uk/en/homes/buying-a-home/buy-to-let-mortgages-explained");
+    			attr_dev(a, "class", "svelte-25pkxp");
     			add_location(a, file, 33, 12, 891);
-    			attr_dev(p2, "class", "svelte-12mxchm");
+    			attr_dev(p2, "class", "svelte-25pkxp");
     			add_location(p2, file, 31, 2, 810);
-    			attr_dev(div0, "class", "notes svelte-12mxchm");
+    			attr_dev(div0, "class", "notes svelte-25pkxp");
     			add_location(div0, file, 26, 1, 675);
-    			attr_dev(h30, "class", "svelte-12mxchm");
+    			attr_dev(h30, "class", "svelte-25pkxp");
     			add_location(h30, file, 42, 1, 1116);
-    			attr_dev(p3, "class", "name svelte-12mxchm");
+    			attr_dev(p3, "class", "name svelte-25pkxp");
     			add_location(p3, file, 55, 5, 1499);
-    			attr_dev(div1, "class", "section-top svelte-12mxchm");
+    			attr_dev(div1, "class", "section-top svelte-25pkxp");
     			add_location(div1, file, 54, 4, 1468);
-    			attr_dev(p4, "class", "svelte-12mxchm");
+    			attr_dev(p4, "class", "svelte-25pkxp");
     			add_location(p4, file, 58, 5, 1580);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "id", "house-price");
     			attr_dev(input0, "placeholder", "100,000");
-    			attr_dev(input0, "class", "svelte-12mxchm");
+    			attr_dev(input0, "class", "svelte-25pkxp");
     			add_location(input0, file, 59, 5, 1594);
-    			attr_dev(div2, "class", "section-bottom svelte-12mxchm");
+    			attr_dev(div2, "class", "section-bottom svelte-25pkxp");
     			add_location(div2, file, 57, 4, 1546);
-    			attr_dev(div3, "class", "section svelte-12mxchm");
+    			attr_dev(div3, "class", "section svelte-25pkxp");
     			add_location(div3, file, 53, 3, 1442);
-    			attr_dev(p5, "class", "name svelte-12mxchm");
+    			attr_dev(p5, "class", "name svelte-25pkxp");
     			add_location(p5, file, 69, 5, 1791);
-    			attr_dev(div4, "class", "section-top svelte-12mxchm");
+    			attr_dev(div4, "class", "section-top svelte-25pkxp");
     			add_location(div4, file, 68, 4, 1760);
-    			attr_dev(p6, "class", "svelte-12mxchm");
+    			attr_dev(p6, "class", "svelte-25pkxp");
     			add_location(p6, file, 72, 5, 1868);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "id", "deposit");
     			attr_dev(input1, "placeholder", "20,000");
-    			attr_dev(input1, "class", "svelte-12mxchm");
+    			attr_dev(input1, "class", "svelte-25pkxp");
     			add_location(input1, file, 73, 5, 1882);
-    			attr_dev(div5, "class", "section-bottom svelte-12mxchm");
+    			attr_dev(div5, "class", "section-bottom svelte-25pkxp");
     			add_location(div5, file, 71, 4, 1834);
     			add_location(span0, file, 81, 28, 2050);
-    			attr_dev(p7, "class", "note svelte-12mxchm");
+    			attr_dev(p7, "class", "note svelte-25pkxp");
     			add_location(p7, file, 80, 4, 2005);
-    			attr_dev(div6, "class", "section svelte-12mxchm");
+    			attr_dev(div6, "class", "section svelte-25pkxp");
     			add_location(div6, file, 67, 3, 1734);
-    			attr_dev(p8, "class", "name svelte-12mxchm");
+    			attr_dev(p8, "class", "name svelte-25pkxp");
     			add_location(p8, file, 86, 5, 2144);
-    			attr_dev(div7, "class", "section-top svelte-12mxchm");
+    			attr_dev(div7, "class", "section-top svelte-25pkxp");
     			add_location(div7, file, 85, 4, 2113);
-    			attr_dev(p9, "class", "svelte-12mxchm");
+    			attr_dev(p9, "class", "svelte-25pkxp");
     			add_location(p9, file, 89, 5, 2224);
-    			attr_dev(div8, "class", "section-bottom svelte-12mxchm");
+    			attr_dev(div8, "class", "section-bottom svelte-25pkxp");
     			add_location(div8, file, 88, 4, 2190);
-    			attr_dev(div9, "class", "section svelte-12mxchm");
+    			attr_dev(div9, "class", "section svelte-25pkxp");
     			add_location(div9, file, 84, 3, 2087);
-    			attr_dev(p10, "class", "name svelte-12mxchm");
+    			attr_dev(p10, "class", "name svelte-25pkxp");
     			add_location(p10, file, 143, 5, 3506);
-    			attr_dev(div10, "class", "section-top svelte-12mxchm");
+    			attr_dev(div10, "class", "section-top svelte-25pkxp");
     			add_location(div10, file, 142, 4, 3475);
-    			attr_dev(p11, "class", "svelte-12mxchm");
+    			attr_dev(p11, "class", "svelte-25pkxp");
     			add_location(p11, file, 146, 5, 3607);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "id", "monthly-rental-income");
     			attr_dev(input2, "placeholder", "800");
-    			attr_dev(input2, "class", "svelte-12mxchm");
+    			attr_dev(input2, "class", "svelte-25pkxp");
     			add_location(input2, file, 147, 5, 3621);
-    			attr_dev(div11, "class", "section-bottom svelte-12mxchm");
+    			attr_dev(div11, "class", "section-bottom svelte-25pkxp");
     			add_location(div11, file, 145, 4, 3573);
-    			attr_dev(div12, "class", "section svelte-12mxchm");
+    			attr_dev(div12, "class", "section svelte-25pkxp");
     			add_location(div12, file, 141, 3, 3449);
-    			attr_dev(div13, "class", "calc-input svelte-12mxchm");
+    			attr_dev(div13, "class", "calc-input svelte-25pkxp");
     			add_location(div13, file, 52, 2, 1414);
-    			attr_dev(div14, "class", "col left note svelte-12mxchm");
+    			attr_dev(div14, "class", "col left note svelte-25pkxp");
     			add_location(div14, file, 159, 4, 3869);
-    			attr_dev(div15, "class", "col right note svelte-12mxchm");
+    			attr_dev(div15, "class", "col right note svelte-25pkxp");
     			add_location(div15, file, 160, 4, 3924);
-    			attr_dev(div16, "class", "row svelte-12mxchm");
+    			attr_dev(div16, "class", "row svelte-25pkxp");
     			add_location(div16, file, 158, 3, 3847);
-    			attr_dev(div17, "class", "col left svelte-12mxchm");
+    			attr_dev(div17, "class", "col left svelte-25pkxp");
     			add_location(div17, file, 188, 4, 4748);
     			attr_dev(span1, "id", "yield");
     			add_location(span1, file, 190, 5, 4816);
-    			attr_dev(div18, "class", "col right svelte-12mxchm");
+    			attr_dev(div18, "class", "col right svelte-25pkxp");
     			add_location(div18, file, 189, 4, 4787);
-    			attr_dev(div19, "class", "row svelte-12mxchm");
+    			attr_dev(div19, "class", "row svelte-25pkxp");
     			add_location(div19, file, 187, 3, 4726);
-    			attr_dev(div20, "class", "col left svelte-12mxchm");
+    			attr_dev(div20, "class", "col left svelte-25pkxp");
     			add_location(div20, file, 194, 4, 4905);
-    			attr_dev(div21, "class", "col right svelte-12mxchm");
+    			attr_dev(div21, "class", "col right svelte-25pkxp");
     			add_location(div21, file, 195, 4, 4956);
-    			attr_dev(div22, "class", "row svelte-12mxchm");
+    			attr_dev(div22, "class", "row svelte-25pkxp");
     			add_location(div22, file, 193, 3, 4883);
-    			attr_dev(div23, "class", "col left svelte-12mxchm");
+    			attr_dev(div23, "class", "col left svelte-25pkxp");
     			add_location(div23, file, 204, 4, 5147);
     			attr_dev(span2, "id", "yield");
     			add_location(span2, file, 206, 5, 5223);
-    			attr_dev(div24, "class", "col right svelte-12mxchm");
+    			attr_dev(div24, "class", "col right svelte-25pkxp");
     			add_location(div24, file, 205, 4, 5194);
-    			attr_dev(div25, "class", "row svelte-12mxchm");
+    			attr_dev(div25, "class", "row svelte-25pkxp");
     			add_location(div25, file, 203, 3, 5125);
-    			attr_dev(div26, "class", "col left svelte-12mxchm");
+    			attr_dev(div26, "class", "col left svelte-25pkxp");
     			add_location(div26, file, 210, 4, 5306);
-    			attr_dev(div27, "class", "col right svelte-12mxchm");
+    			attr_dev(div27, "class", "col right svelte-25pkxp");
     			add_location(div27, file, 211, 4, 5360);
-    			attr_dev(div28, "class", "row svelte-12mxchm");
+    			attr_dev(div28, "class", "row svelte-25pkxp");
     			add_location(div28, file, 209, 3, 5284);
     			attr_dev(div29, "class", "calc-output");
     			add_location(div29, file, 157, 2, 3818);
-    			attr_dev(div30, "class", "container svelte-12mxchm");
+    			attr_dev(div30, "class", "container svelte-25pkxp");
     			add_location(div30, file, 43, 1, 1147);
-    			attr_dev(h31, "class", "svelte-12mxchm");
+    			attr_dev(h31, "class", "svelte-25pkxp");
     			add_location(h31, file, 229, 2, 5775);
     			attr_dev(p12, "id", "additional-fyi");
-    			attr_dev(p12, "class", "svelte-12mxchm");
+    			attr_dev(p12, "class", "svelte-25pkxp");
     			add_location(p12, file, 230, 2, 5811);
-    			attr_dev(p13, "class", "name svelte-12mxchm");
+    			attr_dev(p13, "class", "name svelte-25pkxp");
     			add_location(p13, file, 239, 5, 6136);
-    			attr_dev(p14, "class", "note svelte-12mxchm");
+    			attr_dev(p14, "class", "note svelte-25pkxp");
     			add_location(p14, file, 240, 5, 6176);
-    			attr_dev(div31, "class", "section-top svelte-12mxchm");
+    			attr_dev(div31, "class", "section-top svelte-25pkxp");
     			add_location(div31, file, 238, 4, 6105);
-    			attr_dev(p15, "class", "svelte-12mxchm");
+    			attr_dev(p15, "class", "svelte-25pkxp");
     			add_location(p15, file, 245, 5, 6310);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "id", "fees");
     			attr_dev(input3, "placeholder", "10,000");
-    			attr_dev(input3, "class", "svelte-12mxchm");
+    			attr_dev(input3, "class", "svelte-25pkxp");
     			add_location(input3, file, 246, 5, 6324);
-    			attr_dev(div32, "class", "section-bottom svelte-12mxchm");
+    			attr_dev(div32, "class", "section-bottom svelte-25pkxp");
     			add_location(div32, file, 244, 4, 6276);
-    			attr_dev(div33, "class", "section svelte-12mxchm");
+    			attr_dev(div33, "class", "section svelte-25pkxp");
     			add_location(div33, file, 237, 3, 6079);
-    			attr_dev(p16, "class", "name svelte-12mxchm");
+    			attr_dev(p16, "class", "name svelte-25pkxp");
     			add_location(p16, file, 256, 5, 6507);
-    			attr_dev(p17, "class", "note svelte-12mxchm");
+    			attr_dev(p17, "class", "note svelte-25pkxp");
     			add_location(p17, file, 257, 5, 6556);
-    			attr_dev(div34, "class", "section-top svelte-12mxchm");
+    			attr_dev(div34, "class", "section-top svelte-25pkxp");
     			add_location(div34, file, 255, 4, 6476);
-    			attr_dev(p18, "class", "svelte-12mxchm");
+    			attr_dev(p18, "class", "svelte-25pkxp");
     			add_location(p18, file, 262, 5, 6685);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "id", "oneOffCost");
     			attr_dev(input4, "placeholder", "1,000");
-    			attr_dev(input4, "class", "svelte-12mxchm");
+    			attr_dev(input4, "class", "svelte-25pkxp");
     			add_location(input4, file, 263, 5, 6699);
-    			attr_dev(div35, "class", "section-bottom svelte-12mxchm");
+    			attr_dev(div35, "class", "section-bottom svelte-25pkxp");
     			add_location(div35, file, 261, 4, 6651);
-    			attr_dev(div36, "class", "section svelte-12mxchm");
+    			attr_dev(div36, "class", "section svelte-25pkxp");
     			add_location(div36, file, 254, 3, 6450);
-    			attr_dev(p19, "class", "name svelte-12mxchm");
+    			attr_dev(p19, "class", "name svelte-25pkxp");
     			add_location(p19, file, 273, 5, 6893);
-    			attr_dev(div37, "class", "section-top svelte-12mxchm");
+    			attr_dev(div37, "class", "section-top svelte-25pkxp");
     			add_location(div37, file, 272, 4, 6862);
-    			attr_dev(p20, "class", "svelte-12mxchm");
+    			attr_dev(p20, "class", "svelte-25pkxp");
     			add_location(p20, file, 276, 5, 6997);
     			attr_dev(input5, "type", "number");
     			attr_dev(input5, "id", "monthlyMortgage");
     			attr_dev(input5, "placeholder", "200");
-    			attr_dev(input5, "class", "svelte-12mxchm");
+    			attr_dev(input5, "class", "svelte-25pkxp");
     			add_location(input5, file, 277, 5, 7011);
-    			attr_dev(div38, "class", "section-bottom svelte-12mxchm");
+    			attr_dev(div38, "class", "section-bottom svelte-25pkxp");
     			add_location(div38, file, 275, 4, 6963);
-    			attr_dev(div39, "class", "section svelte-12mxchm");
+    			attr_dev(div39, "class", "section svelte-25pkxp");
     			add_location(div39, file, 271, 3, 6836);
-    			attr_dev(p21, "class", "name svelte-12mxchm");
+    			attr_dev(p21, "class", "name svelte-25pkxp");
     			add_location(p21, file, 287, 5, 7213);
-    			attr_dev(p22, "class", "note svelte-12mxchm");
+    			attr_dev(p22, "class", "note svelte-25pkxp");
     			add_location(p22, file, 288, 5, 7262);
-    			attr_dev(div40, "class", "section-top svelte-12mxchm");
+    			attr_dev(div40, "class", "section-top svelte-25pkxp");
     			add_location(div40, file, 286, 4, 7182);
-    			attr_dev(p23, "class", "svelte-12mxchm");
+    			attr_dev(p23, "class", "svelte-25pkxp");
     			add_location(p23, file, 293, 5, 7401);
     			attr_dev(input6, "type", "number");
     			attr_dev(input6, "id", "monthlyCosts");
     			attr_dev(input6, "placeholder", "50");
-    			attr_dev(input6, "class", "svelte-12mxchm");
+    			attr_dev(input6, "class", "svelte-25pkxp");
     			add_location(input6, file, 294, 5, 7415);
-    			attr_dev(div41, "class", "section-bottom svelte-12mxchm");
+    			attr_dev(div41, "class", "section-bottom svelte-25pkxp");
     			add_location(div41, file, 292, 4, 7367);
-    			attr_dev(div42, "class", "section svelte-12mxchm");
+    			attr_dev(div42, "class", "section svelte-25pkxp");
     			add_location(div42, file, 285, 3, 7156);
-    			attr_dev(div43, "class", "calc-input svelte-12mxchm");
+    			attr_dev(div43, "class", "calc-input svelte-25pkxp");
     			add_location(div43, file, 236, 2, 6051);
-    			attr_dev(div44, "class", "col left svelte-12mxchm");
+    			attr_dev(div44, "class", "col left svelte-25pkxp");
     			add_location(div44, file, 306, 4, 7650);
-    			attr_dev(div45, "class", "col right svelte-12mxchm");
+    			attr_dev(div45, "class", "col right svelte-25pkxp");
     			add_location(div45, file, 307, 4, 7708);
-    			attr_dev(div46, "class", "row svelte-12mxchm");
+    			attr_dev(div46, "class", "row svelte-25pkxp");
     			add_location(div46, file, 305, 3, 7628);
-    			attr_dev(div47, "class", "col left svelte-12mxchm");
+    			attr_dev(div47, "class", "col left svelte-25pkxp");
     			add_location(div47, file, 319, 4, 8053);
-    			attr_dev(div48, "class", "col right svelte-12mxchm");
+    			attr_dev(div48, "class", "col right svelte-25pkxp");
     			add_location(div48, file, 320, 4, 8110);
-    			attr_dev(div49, "class", "row svelte-12mxchm");
+    			attr_dev(div49, "class", "row svelte-25pkxp");
     			add_location(div49, file, 318, 3, 8031);
-    			attr_dev(div50, "class", "col left svelte-12mxchm");
+    			attr_dev(div50, "class", "col left svelte-25pkxp");
     			add_location(div50, file, 332, 4, 8454);
-    			attr_dev(div51, "class", "col right svelte-12mxchm");
+    			attr_dev(div51, "class", "col right svelte-25pkxp");
     			add_location(div51, file, 333, 4, 8498);
-    			attr_dev(div52, "class", "row svelte-12mxchm");
+    			attr_dev(div52, "class", "row svelte-25pkxp");
     			add_location(div52, file, 331, 3, 8432);
     			attr_dev(div53, "class", "calc-output");
     			add_location(div53, file, 304, 2, 7599);
-    			attr_dev(div54, "class", "container svelte-12mxchm");
+    			attr_dev(div54, "class", "container svelte-25pkxp");
     			add_location(div54, file, 227, 1, 5700);
-    			attr_dev(main, "class", "svelte-12mxchm");
+    			attr_dev(main, "class", "svelte-25pkxp");
     			add_location(main, file, 20, 0, 578);
     		},
     		l: function claim(nodes) {

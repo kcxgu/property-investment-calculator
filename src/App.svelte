@@ -367,6 +367,14 @@
 		padding: 2rem 0 0.5rem 0;
 	}
 
+	a {
+		color: var(--soft-purple);
+	}
+
+	a:hover {
+		color: var(--mid-gray);
+	}
+
 	#additional-fyi {
 		line-height: 130%;
 		padding: 0.5rem 0;
